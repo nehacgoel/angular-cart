@@ -21,8 +21,28 @@
 
 /**
  * KEY CONCEPTS
- * Actions describe unique events that are dispatched from components and services.
- * State changes are handled by pure functions called reducers that take the current state and the latest action to compute a new state.
+  - Actions describe unique events that are dispatched from components and services.
+  - Actions are plain objects with a type property and an optional payload.
+
+ - Reducers- responsible for handling transitions from one state to the next state in your application. 
+ Reducer functions handle these transitions by determining which actions to handle based on the action's type.
+ Reducers are pure functions that take the current state and an action, and return a new state.
+
  * selectors are pure functions used to select, derive and compose pieces of state.
  * State is accessed with the Store, an observable of state and an observer of actions.
+ */
+
+/**
+ * 
+ ng add @ngrx/store@latest
+    adds the NgRx Store library  — the main library that lets  manage global application state in a Redux-style pattern
+
+ ng add @ngrx/store-devtools@latest
+    Adds browser debugging support via Redux DevTools Extension.
+    So when you use the Chrome/Firefox Redux DevTools, you can:
+    See all dispatched actions
+    Inspect current store state
+    Time-travel through app state (undo/redo)
+    Debug NgRx behavior visually
+ 
  */

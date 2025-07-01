@@ -1,23 +1,23 @@
 <h2>Product List</h2>
 
-<input
-  [formControl]="searchControl"
-  placeholder="Search products..."
-  class="search-input"
-/>
+<input [formControl]="searchControl" placeholder="Search products..." class="search-input" />
 
 <div *ngIf="loading(); else productList">Loading...</div>
 
 <ng-template #productList>
-    <div *ngIf="filteredProducts().length > 0; else noResults">
-        <div class="grid">
-            <div *ngFor="let product of filteredProducts()" class="card">
-            <h3>{{ product.title }}</h3>
-            <img [src]="product.image" alt="{{ product.title }}" />
-            <p>{{ product.price | currency }}</p>
-            </div>
+  <div *ngIf="filteredProducts().length > 0; else noResults">
+    <div class="grid">
+      <div *ngFor="let product of filteredProducts()">
+        <div class="card">
+          <h3>{{ product.title }}</h3>
+          <img [src]="product.image" alt="{{ product.title }}" />
+          <p>{{ product.price | currency }}</p>
+
+          <button (click)="addToCart(product)">Add to Cart</button>
         </div>
-    </div> 
+      </div>
+    </div>
+  </div>
 </ng-template>
 
 <ng-template #noResults>
