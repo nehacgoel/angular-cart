@@ -1,0 +1,63 @@
+What are Angular Signals, and how do they differ from RxJS Observables? Can you compare performance and reactivity?
+
+Explain how signal(), computed(), and effect() work internally.
+
+How does change detection behave differently with Signals?
+
+Can you show a scenario where Signals can replace a BehaviorSubject or AsyncPipe?
+
+What are the caveats of using Signals with template-heavy components or with third-party UI libraries?
+
+How would you integrate Angular Signals in a large-scale enterprise application without rewriting everything?
+
+When would you still choose RxJS over Signals?
+
+Can you describe a memory leak risk in Signals if not unsubscribed or used incorrectly?
+
+How does Angular batch updates with Signals, and how is it different from zone-based change detection?
+
+How would you unit test a computed signal that depends on multiple reactive inputs?
+
+Explain the full NgRx flow (actions → reducer → effects → selectors) with a real-world feature (like cart or login).
+
+How would you structure state for a complex multi-step form across lazy-loaded modules?
+
+What is createFeature() in NgRx 16+ and why is it important?
+
+What is the role of provideStore() and how does NgRx integrate with Angular Standalone APIs?
+
+Why and when would you split your app state into feature slices?
+
+Compare createReducer() vs traditional switch-case reducers.
+
+How do you prevent dispatching the same action multiple times (e.g., debounce user search)?
+
+How do you handle API errors and global error messages via NgRx Effects elegantly?
+
+What are the trade-offs between using NgRx Store vs Component-local state (like Signals)?
+
+How does NgRx Entity simplify CRUD operations, and what are its best practices?
+
+What is the @ngrx/component-store package and how is it different from the global store?
+
+How do you debug NgRx state in production? What tools and techniques do you use?
+
+Can Signals fully replace NgRx in modern Angular? When would you choose one over the other?
+
+How would you refactor an NgRx-heavy component to use Signals for better performance?
+
+What are the challenges of using Signals with @ngrx/component-store?
+
+Do Signals work well with the OnPush strategy? How does that affect NgRx selectors?
+
+Can you create a hybrid store approach where Signals are used for UI state and NgRx for app state? Explain how.
+
+If you’re leading a large Angular project, how would you architect state management across multiple teams?
+
+How do you decide what goes in the store vs what stays in the component or service?
+
+What are best practices for lazy-loaded state modules in NgRx?
+
+How do you structure folder-level separation for NgRx to avoid spaghetti code in a long-term project?
+
+How would you handle SSR (Server-Side Rendering) in an Angular + NgRx + Signals setup?
