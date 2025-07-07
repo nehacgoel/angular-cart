@@ -16,5 +16,10 @@ export const removeFromCart = createAction(
   props<{ itemId: number }>()
 );
 
+export const removeFromCartRequest = createAction(
+  '[Cart] Remove Item Request',
+  props<{ itemId: number }>()
+)
+
 console.log('removeFromCart action created', removeFromCart);
 

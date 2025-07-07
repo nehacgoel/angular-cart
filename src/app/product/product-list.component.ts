@@ -5,7 +5,8 @@ import { FormControl, ReactiveFormsModule } from "@angular/forms";
 import { Store } from "@ngrx/store";
 import { debounceTime, distinctUntilChanged } from "rxjs";
 import { selectCartItems, selectTotalItems } from "../cart/cart.selectors";
-import { addToCart } from "../cart/cart.actions";
+import { addToCart, removeFromCartRequest } from "../cart/cart.actions";
+import { CartItem } from "../cart/cart.model";
 
 @Component({
   selector: "app-product-list",
@@ -22,6 +23,7 @@ export class ProductListComponent {
   loading = signal(true);
   searchControl = new FormControl("");
   searchTerm = signal("");
+  cartItems = signal<CartItem[]>([]);
 
   // ✅ Computed signal for filtered data
   filteredProducts = computed(() => {
@@ -44,13 +46,16 @@ export class ProductListComponent {
       });
 
     // Subscribe to the cart items and total items from the store
-    this.store.select(selectCartItems).subscribe((items) => {
-      console.log("[Component] Cart items from selector:", items);
+
+    this.store.select(selectCartItems).subscribe(items => {
+      this.cartItems.set(items);
     });
 
     this.store.select(selectTotalItems).subscribe((total) => {
       console.log("[Component] Total cart items count:", total);
     });
+
+    
   }
 
   addToCart(product: any) {
@@ -63,5 +68,10 @@ export class ProductListComponent {
     };
     console.log("[Component] Dispatching addToCart for:", cartItem);
     this.store.dispatch(addToCart({ item: cartItem }));
+  }
+
+  removeFromCart(itemId: number) {
+  console.log('[Component] Requesting removal of item:', itemId);
+    this.store.dispatch(removeFromCartRequest({ itemId }));
   }
 }

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-19": {
+    "angular-cart": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/angular-19",
+            "outputPath": "dist/angular-cart",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -64,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "angular-19:build:production"
+              "buildTarget": "angular-cart:build:production"
             },
             "development": {
-              "buildTarget": "angular-19:build:development"
+              "buildTarget": "angular-cart:build:development"
             }
           },
           "defaultConfiguration": "development"
